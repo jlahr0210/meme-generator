@@ -31,4 +31,4 @@ export default {
 
 # meme-generator
 
-Enjoy the meme-generator project!
+Enjoy the Meme Generator project!
