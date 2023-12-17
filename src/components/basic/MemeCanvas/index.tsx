@@ -74,7 +74,11 @@ export function MemeCanvas({ canvasImage = null as string | null }) {
     <div className={styles.container}>
       <div className={styles.controls}>
         <div>
-          <Button label='Rotate' onClick={rotateImage} />
+          <Button
+            data-testid='rotateButton'
+            label='Rotate'
+            onClick={rotateImage}
+          />
           <Button label='Scale Up' onClick={scaleUp} />
           <Button label='Scale Down' onClick={scaleDown} />
           <Button
@@ -148,6 +152,7 @@ export function MemeCanvas({ canvasImage = null as string | null }) {
           <div className={styles.imageContainer}>
             <When condition={!hasError}>
               <img
+                data-testid='canvasImage'
                 onLoad={() => setIsLoading(false)}
                 onError={throwImageError}
                 id='canvasImage'
