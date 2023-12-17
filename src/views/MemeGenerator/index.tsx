@@ -36,6 +36,34 @@ export function MemeGenerator() {
         </section>
 
         <section className={styles.body}>
+          <div className={styles.exampleImageContainer}>
+            <div
+              className={styles.exampleImage}
+              onClick={() =>
+                setImageUrl(
+                  'https://i.ibb.co/nrtn5tC/Hill-Grant-99-MEDR8400-crop-north.jpg'
+                )
+              }
+            >
+              Grant Hill
+            </div>
+            <div
+              className={styles.exampleImage}
+              onClick={() =>
+                setImageUrl('https://i.ibb.co/yVs3pTz/colorado.jpg')
+              }
+            >
+              Colorado
+            </div>
+            <div
+              className={styles.exampleImage}
+              onClick={() =>
+                setImageUrl('https://i.ibb.co/8zTWBc9/zion2.png')
+              }
+            >
+              Zion
+            </div>
+          </div>
           <When condition={canvasImage}>
             <MemeCanvas canvasImage={canvasImage} />
           </When>

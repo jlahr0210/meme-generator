@@ -6,7 +6,7 @@ import { COLOR_PICKER_COLORS } from '../../../constants';
 
 /* Color Picker component */
 export function ColorSelector({
-  selectedColor = '#FFF',
+  selectedColor,
   pickColor,
 }: ColorSelectorProps) {
   const selectColor = (color: string) => {
