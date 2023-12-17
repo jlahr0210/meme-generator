@@ -1,1 +1,4 @@
-export type BlobImage = string | ArrayBuffer | null;
+export interface ImageExample {
+  url: string;
+  title: string;
+}

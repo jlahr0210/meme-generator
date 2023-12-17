@@ -1,3 +1,5 @@
+import { ImageExample } from './views/MemeGenerator/types';
+
 export const IMAGE_REGEX =
   /(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|png|svg|webp))/i;
 
@@ -13,4 +15,19 @@ export const COLOR_PICKER_COLORS = [
   '#801ce3',
   '#e31ce3',
   '#FFF',
+];
+
+export const IMAGE_EXAMPLES: ImageExample[] = [
+  {
+    url: 'https://i.ibb.co/nrtn5tC/Hill-Grant-99-MEDR8400-crop-north.jpg',
+    title: 'Grant Hill',
+  },
+  {
+    url: 'https://i.ibb.co/yVs3pTz/colorado.jpg',
+    title: 'Colorado',
+  },
+  {
+    url: 'https://i.ibb.co/8zTWBc9/zion2.png',
+    title: 'Zion',
+  },
 ];

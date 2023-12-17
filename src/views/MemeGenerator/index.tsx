@@ -4,6 +4,7 @@ import styles from './styles.module.scss';
 import { MemeCanvas } from '../../components/basic/MemeCanvas';
 import { Button } from '../../components/ui/Button';
 import { When } from 'react-if';
+import { IMAGE_EXAMPLES } from '../../constants';
 
 export function MemeGenerator() {
   const [imageUrl, setImageUrl] = useState('');
@@ -37,32 +38,15 @@ export function MemeGenerator() {
 
         <section className={styles.body}>
           <div className={styles.exampleImageContainer}>
-            <div
-              className={styles.exampleImage}
-              onClick={() =>
-                setImageUrl(
-                  'https://i.ibb.co/nrtn5tC/Hill-Grant-99-MEDR8400-crop-north.jpg'
-                )
-              }
-            >
-              Grant Hill
-            </div>
-            <div
-              className={styles.exampleImage}
-              onClick={() =>
-                setImageUrl('https://i.ibb.co/yVs3pTz/colorado.jpg')
-              }
-            >
-              Colorado
-            </div>
-            <div
-              className={styles.exampleImage}
-              onClick={() =>
-                setImageUrl('https://i.ibb.co/8zTWBc9/zion2.png')
-              }
-            >
-              Zion
-            </div>
+            {IMAGE_EXAMPLES.map((example, idx: number) => (
+              <div
+                key={idx}
+                className={styles.exampleImage}
+                onClick={() => setImageUrl(example.url)}
+              >
+                {example.title}
+              </div>
+            ))}
           </div>
           <When condition={canvasImage}>
             <MemeCanvas canvasImage={canvasImage} />
