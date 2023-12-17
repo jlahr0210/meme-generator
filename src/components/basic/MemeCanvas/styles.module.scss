@@ -1,0 +1,95 @@
+.memeContainer {
+  margin: 0 auto;
+  width: 800px;
+  height: 800px;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  img {
+    width: 100%;
+  }
+}
+
+.controls {
+  margin: 0 auto;
+  width: 800px;
+  padding: 20px 0px;
+  text-align: center;
+  button {
+    margin: 0 5px;
+  }
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.textInputsContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.textTop {
+  position: absolute;
+  z-index: 10;
+  width: 800px;
+}
+
+.textBottom {
+  position: absolute;
+  z-index: 10;
+  width: 800px;
+  bottom: 0px;
+}
+
+.popover {
+  position: absolute;
+  z-index: 20;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.cover {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.topPickerContainer {
+  position: relative;
+  margin: 0 auto;
+}
+
+.colorSelectContainer {
+  margin-left: 5px;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+
+.textContainer {
+  text-transform: uppercase;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 80px;
+  width: 100%;
+  text-align: center;
+  text-shadow: 4px 4px 0 #000, -4px -4px 0 #000, 4px -4px 0 #000,
+    -4px 4px 0 #000, 0px 4px 0 #000, 4px 0px 0 #000, 0px -4px 0 #000,
+    -4px 0px 0 #000;
+}

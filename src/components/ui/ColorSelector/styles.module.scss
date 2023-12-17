@@ -1,0 +1,25 @@
+.mainContainer {
+  position: relative;
+}
+
+.palette {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  z-index: 20;
+  top: 35px;
+  width: 200px;
+}
+
+.paletteColor,
+.paletteSelectColor {
+  width: 20px;
+  height: 20px;
+  border: thin solid #ccc;
+  cursor: pointer;
+}
+
+.paletteSelectColor {
+  width: 35px;
+  height: 35px;
+}
