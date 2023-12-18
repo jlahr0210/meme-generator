@@ -32,7 +32,7 @@ export function MemeGenerator() {
     <div className={styles.outerContainer}>
       <div className={styles.titleText}>Jeff's Meme Generator</div>
       <div className={styles.innerContainer}>
-        <section className={styles.header}>
+        <div className={styles.header}>
           <div className={styles.imageInput}>
             <div className={styles.urlInput}>
               <TextInput
@@ -49,9 +49,9 @@ export function MemeGenerator() {
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
-        <section className={styles.body}>
+        <div className={styles.body}>
           <div className={styles.exampleImageContainer}>
             {IMAGE_EXAMPLES.map((example, idx: number) => (
               <div
@@ -69,7 +69,7 @@ export function MemeGenerator() {
           <When condition={canvasImage && !isLoading}>
             <MemeCanvas canvasImage={canvasImage} />
           </When>
-        </section>
+        </div>
       </div>
     </div>
   );
