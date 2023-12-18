@@ -27,7 +27,11 @@ export const IMAGE_EXAMPLES: ImageExample[] = [
     title: 'Colorado',
   },
   {
-    url: 'https://i.ibb.co/8zTWBc9/zion2.png',
+    url: 'https://i.ibb.co/x5tMRvh/zion.jpg',
     title: 'Zion',
+  },
+  {
+    url: 'https://i.ibb.co/2gxxfsg/skol.jpg',
+    title: 'Vikings',
   },
 ];
