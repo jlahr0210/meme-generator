@@ -48,39 +48,8 @@
   bottom: 0px;
 }
 
-.popover {
-  position: absolute;
-  z-index: 20;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}
-
-.cover {
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}
-
-.topPickerContainer {
-  position: relative;
-  margin: 0 auto;
-}
-
 .colorSelectContainer {
   margin-left: 5px;
-}
-
-.loading {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
 }
 
 .textContainer {

@@ -20,9 +20,6 @@ export function MemeCanvas({ canvasImage = null as string | null }) {
   const [topColor, setTopColor] = useState('#FFF');
   const [bottomColor, setBottomColor] = useState('#FFF');
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [hasError, setHasError] = useState(false);
-
   /* reset canvas to defaults */
   const resetCanvas = () => {
     setImageRotation(0);
@@ -49,13 +46,6 @@ export function MemeCanvas({ canvasImage = null as string | null }) {
     setImageScale(imageScale - IMAGE_SCALE_MARGIN);
   };
 
-  /* image error handling */
-  const throwImageError = () => {
-    setIsLoading(false);
-    setHasError(true);
-    alert('Could not load image! Please check your image URL.');
-  };
-
   /* apply css for transform here */
   const transformStyles = `rotate(${imageRotation}deg) scale(${imageScale}) ${
     imageFlipped ? `scaleX(-1)` : ``
@@ -64,14 +54,12 @@ export function MemeCanvas({ canvasImage = null as string | null }) {
   useLayoutEffect(() => {
     /* when image changes, reset to defaults */
     if (canvasImage) {
-      setHasError(false);
-      setIsLoading(true);
       resetCanvas();
     }
   }, [canvasImage]);
 
   return (
-    <div className={styles.container}>
+    <div>
       <div className={styles.controls}>
         <div>
           <Button label='Rotate' onClick={rotateImage} />
@@ -141,25 +129,16 @@ export function MemeCanvas({ canvasImage = null as string | null }) {
             </div>
           </div>
 
-          <When condition={isLoading}>
-            <div className={styles.loading}>Loading</div>
-          </When>
-
           <div className={styles.imageContainer}>
-            <When condition={!hasError}>
-              <img
-                data-testid='canvasImg'
-                onLoad={() => setIsLoading(false)}
-                onError={throwImageError}
-                id='canvasImage'
-                src={canvasImage || ''}
-                className={styles.canvasImage}
-                style={{
-                  transform: transformStyles,
-                  visibility: isLoading ? 'hidden' : 'visible',
-                }}
-              />
-            </When>
+            <img
+              data-testid='canvasImg'
+              id='canvasImage'
+              src={canvasImage || ''}
+              className={styles.canvasImage}
+              style={{
+                transform: transformStyles,
+              }}
+            />
           </div>
         </When>
       </div>

@@ -10,6 +10,24 @@ export function MemeGenerator() {
   const [imageUrl, setImageUrl] = useState('');
   const [canvasImage, setCanvasImage] = useState<string | null>(null);
 
+  const [isLoading, setIsLoading] = useState(false);
+
+  const loadImage = () => {
+    setIsLoading(true);
+    const img = new Image();
+
+    img.onload = function () {
+      setCanvasImage(imageUrl);
+      setIsLoading(false);
+    };
+    img.onerror = function () {
+      setIsLoading(false);
+      alert('Could not load image! Please check your image URL.');
+    };
+
+    img.src = imageUrl;
+  };
+
   return (
     <div className={styles.outerContainer}>
       <div className={styles.titleText}>Jeff's Meme Generator</div>
@@ -27,10 +45,7 @@ export function MemeGenerator() {
               />
 
               <div className={styles.submitContainer}>
-                <Button
-                  label='Meme This!'
-                  onClick={() => setCanvasImage(imageUrl)}
-                />
+                <Button label='Meme This!' onClick={loadImage} />
               </div>
             </div>
           </div>
@@ -48,7 +63,10 @@ export function MemeGenerator() {
               </div>
             ))}
           </div>
-          <When condition={canvasImage}>
+          <When condition={canvasImage && isLoading}>
+            <div className={styles.loading}>Get ready to meme...</div>
+          </When>
+          <When condition={canvasImage && !isLoading}>
             <MemeCanvas canvasImage={canvasImage} />
           </When>
         </section>
